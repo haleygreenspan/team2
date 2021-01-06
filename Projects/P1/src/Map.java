@@ -68,7 +68,7 @@ public class Map{
 		return false;
 	}
 	
-	public JComponent eatCookie(String name) {
+	public boolean eatCookie(String name) {
 		locations.put(name,locations.get(name));
 		components.put(name,components.get(name));
 		field.put(name,);
