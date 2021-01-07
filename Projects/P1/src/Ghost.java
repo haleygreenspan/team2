@@ -25,41 +25,41 @@ public class Ghost {
 		/* Horizontal and Vertical */
 
 		// check (x+1 , y)
-		if (!this.myMap.getLoc(this.myLoc.x + 1, this.myLoc.y).contains(Map.Type.WALL)) {
+		if (!this.myMap.getLoc(new Location(this.myLoc.x + 1, this.myLoc.y)).contains(Map.Type.WALL)) {
 			validMoves.add(new Location(this.myLoc.x + 1, this.myLoc.y));
 		}
 		// check (x-1, y)
-		if (!this.myMap.getLoc(this.myLoc.x - 1, this.myLoc.y).contains(Map.Type.WALL)) {
+		if (!this.myMap.getLoc(new Location(this.myLoc.x - 1, this.myLoc.y)).contains(Map.Type.WALL)) {
 			validMoves.add(new Location(this.myLoc.x + 1, this.myLoc.y));
 		}
 		// check (x, y+1)
-		if (!this.myMap.getLoc(this.myLoc.x, this.myLoc.y + 1).contains(Map.Type.WALL)) {
+		if (!this.myMap.getLoc(new Location(this.myLoc.x, this.myLoc.y + 1)).contains(Map.Type.WALL)) {
 			validMoves.add(new Location(this.myLoc.x + 1, this.myLoc.y));
 		}
 		// check (x, y-1)
-		if (!this.myMap.getLoc(this.myLoc.x, this.myLoc.y - 1).contains(Map.Type.WALL)) {
+		if (!this.myMap.getLoc(new Location(this.myLoc.x, this.myLoc.y - 1)).contains(Map.Type.WALL)) {
 			validMoves.add(new Location(this.myLoc.x + 1, this.myLoc.y));
 		}
 
 		/* Diagonally */
 
 		// check (x+1 , y+1)
-		if (!this.myMap.getLoc(this.myLoc.x + 1, this.myLoc.y).contains(Map.Type.WALL)) {
+		if (!this.myMap.getLoc(new Location(this.myLoc.x + 1, this.myLoc.y)).contains(Map.Type.WALL)) {
 			validMoves.add(new Location(this.myLoc.x + 1, this.myLoc.y));
 		}
 
 		// check (x-1 , y+1)
-		if (!this.myMap.getLoc(this.myLoc.x + 1, this.myLoc.y).contains(Map.Type.WALL)) {
+		if (!this.myMap.getLoc(new Location(this.myLoc.x + 1, this.myLoc.y)).contains(Map.Type.WALL)) {
 			validMoves.add(new Location(this.myLoc.x + 1, this.myLoc.y));
 		}
 
 		// check (x-1 , y-1)
-		if (!this.myMap.getLoc(this.myLoc.x + 1, this.myLoc.y).contains(Map.Type.WALL)) {
+		if (!this.myMap.getLoc(new Location(this.myLoc.x + 1, this.myLoc.y)).contains(Map.Type.WALL)) {
 			validMoves.add(new Location(this.myLoc.x + 1, this.myLoc.y));
 		}
 
 		// check (x+1 , y-1)
-		if (!this.myMap.getLoc(this.myLoc.x + 1, this.myLoc.y).contains(Map.Type.WALL)) {
+		if (!this.myMap.getLoc(new Location(this.myLoc.x + 1, this.myLoc.y)).contains(Map.Type.WALL)) {
 			validMoves.add(new Location(this.myLoc.x + 1, this.myLoc.y));
 		}
 
