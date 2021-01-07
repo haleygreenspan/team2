@@ -55,12 +55,17 @@ public class Map {
 	 */
 
 	public boolean move(String name, Location loc, Type type) {
-		// update locations, components, and field
-		// use the setLocation method for the component to move it to the new location
 		try {
+			// get the old location
+			Location old = locations.get(name);
+			// put new location
 			locations.put(name, loc);
+			// set new location for component
 			components.get(name).setLocation(loc.x, loc.y);
+			// remove the old location and move it to new location
+			field.get(old).remove(type);
 			field.get(loc).add(type);
+			// if all goes fine return true
 			return true;
 		} catch (Exception e) {
 			return false;
