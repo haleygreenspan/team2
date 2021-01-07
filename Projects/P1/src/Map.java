@@ -60,10 +60,13 @@ public class Map{
 	
 	public HashSet<Type> getLoc(Location loc) {
 		//wallSet and emptySet will help you write this method
-		if(field.containsKey(loc)){
+		if(loc.x < 0 || loc.y < 0 || loc.x > dim || loc.y > dim){
+			return wallSet;
+		}
+		else if(field.containsKey(loc)){
 			return field.get(loc);
 		} else {
-			return null;
+			return emptySet;
 		}
 	}
 
