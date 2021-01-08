@@ -9,10 +9,10 @@ public class TestConsume extends TestCase {
 		NoFrame frame = new NoFrame();
 
 		PacMan p1 = frame.addPacMan(new Location(0,0));
-		assertTrue(p1.consume());
+		assertTrue(p1.consume() == null);
 
 		PacMan p2 = frame.addPacMan(new Location(1,1));
-		assertTrue(p2.consume());
+		assertTrue(p2.consume() != null);
 
 	}
 }
