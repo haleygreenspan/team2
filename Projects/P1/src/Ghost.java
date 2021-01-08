@@ -67,7 +67,12 @@ public class Ghost {
 	}
 
 	public boolean move() {
-		return false;
+		if(get_valid_moves().size() != 0){
+			myLoc = get_valid_moves().get(0);
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/**
