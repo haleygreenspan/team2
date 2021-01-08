@@ -121,8 +121,20 @@ public class Map {
 	}
 
 	public JComponent eatCookie(String name) {
-		// update locations, components, field, and cookies
-		// the id for a cookie at (10, 1) is tok_x10_y1
-		return null;
+
+
+		if (PacMan.consume() != null) {
+			field.remove(locations.get(name));
+			locations.remove(name);
+			cookies += 1;
+			return components.remove(name);
+			
+		} else {
+			return null;
+		}
+		
+
+		//update locations, components, field, and cookies
+		//the id for a cookie at (10, 1) is tok_x10_y1
 	}
 }
