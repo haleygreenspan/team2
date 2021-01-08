@@ -2,7 +2,12 @@ import java.util.HashSet;
 import java.util.ArrayList;
 import javax.swing.JComponent;
 
+
+import Map.Type;
+
+
 public class PacMan {
+
 	String myName;
 	Location myLoc;
 	Map myMap;
@@ -107,7 +112,14 @@ public class PacMan {
 		return false;
 	}
 
-	public JComponent consume() {
-		return null;
+
+	public JComponent consume() { 
+		
+		 if (myMap.getLoc(myLoc).contains(Type.COOKIE)){
+			return myMap.eatCookie(myName);
+			 
+		 } else {
+			 return null;
+		 }
 	}
 }

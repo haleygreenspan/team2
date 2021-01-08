@@ -5,6 +5,14 @@ import java.io.*;
 public class TestConsume extends TestCase {
 
 	public void testConsume() throws FileNotFoundException {
-		return null;	
+		// Creating A Map
+		NoFrame frame = new NoFrame();
+
+		PacMan p1 = frame.addPacMan(new Location(0,0));
+		assertTrue(p1.consume() == null);
+
+		PacMan p2 = frame.addPacMan(new Location(1,1));
+		assertTrue(p2.consume() != null);
+
 	}
 }
