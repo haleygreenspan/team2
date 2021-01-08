@@ -33,7 +33,7 @@ public class PacMan{
 		 if (Map.getLoc(myLoc).contains(Type.COOKIE)){
 			 Map.eatCookie(myName);
 		 } else {
-			 null;
+			 return null;
 		 }
 	}
 }
