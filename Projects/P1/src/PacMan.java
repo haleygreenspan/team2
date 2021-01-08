@@ -19,12 +19,7 @@ public class PacMan{
 	}
 
 	public boolean move() {
-		if(get_valid_moves().size() != 0){
-			myLoc = get_valid_moves().get(0);
-			return true;
-		} else {
-			return false;
-		}
+		return false;
 	}
 
 	public boolean is_ghost_in_range() { 
