@@ -73,12 +73,50 @@ public class Map {
 	}
 
 	public HashSet<Type> getLoc(Location loc) {
-		// wallSet and emptySet will help you write this method
-		return null;
+		//wallSet and emptySet will help you write this method
+		if(loc.x < 0 || loc.y < 0 || loc.x > dim || loc.y > dim){
+			return wallSet;
+		} else if(field.containsKey(loc)){
+			return field.get(loc);
+		} else {
+			return emptySet;
+		}
 	}
 
-	public boolean attack(String Name) {
-		// update gameOver
+	/**
+	 * Attempts to make the ghost of the specified name attack pacman.
+	 * If the attack is successful, the game is ended
+	 * 
+	 * @param name the name of the ghost that should try to perform the attack
+	 * @return true if the attack is successful, and false if not
+	 */
+	public boolean attack(String name) {
+		// Ensure this name is valid
+		if (locations.containsKey(name)) {
+			// Get all objects at ${name}'s locaton
+			Location loc = locations.get(name);
+
+			HashSet<Type> objects = getLoc(locations.get(name));
+
+			// Make sure that there actually is a ghost at this location.
+			// It is possible that a name such as "pacman" or "wall" was
+			// given instead of an actual ghost's name
+			if (objects.contains(Type.GHOST)) {
+				// Create a temporary Ghost object to represent
+				// the ghost at this location
+				Ghost temp = new Ghost(name, loc, this);
+
+				// Try to make the ghost attack pacman. End the game
+				// if the attack was successful
+				if (temp.attack()) {
+					gameOver = true;
+					return true;
+				}
+			}
+		}
+
+		// If the name was invalid, the name referred to a non-ghost entity, or
+		// the attack failed, just return false
 		return false;
 	}
 
