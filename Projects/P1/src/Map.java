@@ -73,8 +73,8 @@ public class Map{
 		if (PacMan.consume() != null) {
 			field.remove(locations.get(name));
 			locations.remove(name);
-			components.remove(name);
 			cookies += 1;
+			return components.remove(name);
 			
 		} else {
 			return null;
