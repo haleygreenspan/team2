@@ -1,14 +1,17 @@
 import java.awt.Color;
+import java.io.*;
+
+import static org.junit.Assert.*;
 import junit.framework.*;
 
-public class TestMapAttack {
+public class TestMapAttack extends TestCase {
 
 	/**
 	 * Ensures that a ghost in the range of pacman can be controlled
 	 * to perform a successful attack, and that the game also ends
 	 * after the attack
 	 */
-	public void testMapAttack() {
+	public void testMapAttack() throws FileNotFoundException {
 		NoFrame frame = new NoFrame();
 		
 		frame.addPacMan(new Location(12, 12));
@@ -25,7 +28,7 @@ public class TestMapAttack {
 	 * Ensures that a map attack fails if the name of a non-existent or
 	 * non-ghost entity (e.g. a wall or cookie name) is given
 	 */
-	public void testMapAttackInvalid() {
+	public void testMapAttackInvalid() throws FileNotFoundException  {
 		NoFrame frame = new NoFrame();
 
 		frame.addPacMan(new Location(12, 12));
@@ -44,7 +47,7 @@ public class TestMapAttack {
 	 * Ensures that a map attack fails if the specified ghost is too far
 	 * away from pacman
 	 */
-	public void testMapAttackAway() {
+	public void testMapAttackAway() throws FileNotFoundException  {
 		NoFrame frame = new NoFrame();
 
 		frame.addPacMan(new Location(12, 12));
