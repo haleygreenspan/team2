@@ -82,7 +82,6 @@ public class PacMan {
 		}
 	}
 
-
 	/**
 	 * Determines whether there is a ghost within a 1 radius attack
 	 * range of pacman
