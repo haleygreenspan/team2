@@ -108,7 +108,6 @@ public class Ghost {
 
 		// If none of the coordinates checked had pacman, this ghost is not
 		// in range of pacman
-
 		return false;
 	}
 
