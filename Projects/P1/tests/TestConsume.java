@@ -1,7 +1,7 @@
 import junit.framework.*;
 import java.awt.Color;
 import java.io.*;
-
+import static org.junit.Assert.*;
 public class TestConsume extends TestCase {
 
 	public void testConsume() throws FileNotFoundException {

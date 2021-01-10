@@ -1,8 +1,7 @@
 import java.util.HashSet;
 import java.util.ArrayList;
 import javax.swing.JComponent;
-
-import Map.Type;
+import java.util.Random;
 
 public class PacMan {
 
@@ -70,8 +69,12 @@ public class PacMan {
 	}
 
 	public boolean move() {
-		if (get_valid_moves().size() != 0) {
-			myLoc = get_valid_moves().get(0);
+		if(get_valid_moves().size() != 0){
+			Random r = new Random();
+			int size = get_valid_moves().size();
+			int index = r.nextInt(size);
+			myLoc = get_valid_moves().get(index);
+			myMap.move(myName, myLoc, Map.Type.PACMAN);
 			return true;
 		} else {
 			return false;
@@ -108,9 +111,9 @@ public class PacMan {
 		return false;
 	}
 
-	public JComponent consume() {
-
-		if (myMap.getLoc(myLoc).contains(Type.COOKIE)) {
+  public JComponent consume() { 
+		
+		 if (myMap.getLoc(myLoc).contains(Map.Type.COOKIE)){
 			return myMap.eatCookie(myName);
 
 		} else {
