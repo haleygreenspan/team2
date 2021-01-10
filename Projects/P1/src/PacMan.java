@@ -2,7 +2,9 @@ import java.util.HashSet;
 import java.util.ArrayList;
 import javax.swing.JComponent;
 
+
 public class PacMan {
+
 	String myName;
 	Location myLoc;
 	Map myMap;
@@ -67,14 +69,53 @@ public class PacMan {
 	}
 
 	public boolean move() {
-		return false;
+		if(get_valid_moves().size() != 0){
+			myLoc = get_valid_moves().get(0);
+			return true;
+		} else {
+			return false;
+		}
 	}
 
+	/**
+	 * Determines whether there is a ghost within a 1 radius attack
+	 * range of pacman
+	 * 
+	 * @return true if a ghost is in range of pacman, and false if not
+	 */
 	public boolean is_ghost_in_range() {
+		// Iterate through all x coordinates within a radius of 1
+		for (int x = myLoc.x - 1; x <= myLoc.x + 1; x++) {
+			// Iterate through all y coordinates within a radius of 1
+			for (int y = myLoc.y - 1; y <= myLoc.y + 1; y++) {
+
+				// Get a HashSet of all the objects at the current
+				// (x, y) coordinates being checked
+				Location loc = new Location(x, y);
+
+				HashSet<Map.Type> objects = myMap.getLoc(loc);
+
+				// If there is a ghost at this location, then a ghost
+				// is in range of pacman
+				if (objects.contains(Map.Type.GHOST)) {
+					return true;
+				}
+			}
+		}
+
+		// If none of the coordinates checked had a ghost, there is no
+		// ghost in range of pacman
 		return false;
 	}
 
-	public JComponent consume() {
-		return null;
+
+	public JComponent consume() { 
+		
+		 if (myMap.getLoc(myLoc).contains(Map.Type.COOKIE)){
+			return myMap.eatCookie(myName);
+			 
+		 } else {
+			 return null;
+		 }
 	}
 }
