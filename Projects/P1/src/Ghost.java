@@ -67,14 +67,49 @@ public class Ghost {
 	}
 
 	public boolean move() {
-		return false;
+		if(get_valid_moves().size() != 0){
+			myLoc = get_valid_moves().get(0);
+			return true;
+		} else {
+			return false;
+		}
 	}
 
+	/**
+	 * Determines whether pacman is within a 1 radius attack
+	 * range of this ghost
+	 * 
+	 * @return true if this ghost is in range of pacman, and false if not
+	 */
 	public boolean is_pacman_in_range() {
+		// Iterate through all x coordinates within a radius of 1
+		for (int x = myLoc.x - 1; x <= myLoc.x + 1; x++) {
+			// Iterate through all y coordinates within a radius of 1
+			for (int y = myLoc.y - 1; y <= myLoc.y + 1; y++) {
+
+				// Get a HashSet of all the objects at the current
+				// (x, y) coordinates being checked
+				Location loc = new Location(x, y);
+
+				HashSet<Map.Type> objects = myMap.getLoc(loc);
+
+				// If pacman is at this location, then this ghost
+				// is in range of pacman
+				if (objects.contains(Map.Type.PACMAN)) {
+					return true;
+				}
+			}
+		}
+
+		// If none of the coordinates checked had pacman, this ghost is not
+		// in range of pacman
 		return false;
 	}
 
 	public boolean attack() {
+		if (is_pacman_in_range()) {
+			return myMap.attack(myName);	
+		} 
 		return false;
 	}
 }
