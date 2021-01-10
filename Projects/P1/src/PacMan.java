@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import javax.swing.JComponent;
 import java.util.Random;
 
-
 public class PacMan {
 
 	String myName;
@@ -33,37 +32,37 @@ public class PacMan {
 		}
 		// check (x-1, y)
 		if (!this.myMap.getLoc(new Location(this.myLoc.x - 1, this.myLoc.y)).contains(Map.Type.WALL)) {
-			validMoves.add(new Location(this.myLoc.x + 1, this.myLoc.y));
+			validMoves.add(new Location(this.myLoc.x - 1, this.myLoc.y));
 		}
 		// check (x, y+1)
 		if (!this.myMap.getLoc(new Location(this.myLoc.x, this.myLoc.y + 1)).contains(Map.Type.WALL)) {
-			validMoves.add(new Location(this.myLoc.x + 1, this.myLoc.y));
+			validMoves.add(new Location(this.myLoc.x, this.myLoc.y + 1));
 		}
 		// check (x, y-1)
 		if (!this.myMap.getLoc(new Location(this.myLoc.x, this.myLoc.y - 1)).contains(Map.Type.WALL)) {
-			validMoves.add(new Location(this.myLoc.x + 1, this.myLoc.y));
+			validMoves.add(new Location(this.myLoc.x, this.myLoc.y - 1));
 		}
 
 		/* Diagonally */
 
 		// check (x+1 , y+1)
-		if (!this.myMap.getLoc(new Location(this.myLoc.x + 1, this.myLoc.y)).contains(Map.Type.WALL)) {
-			validMoves.add(new Location(this.myLoc.x + 1, this.myLoc.y));
+		if (!this.myMap.getLoc(new Location(this.myLoc.x + 1, this.myLoc.y + 1)).contains(Map.Type.WALL)) {
+			validMoves.add(new Location(this.myLoc.x + 1, this.myLoc.y + 1));
 		}
 
 		// check (x-1 , y+1)
-		if (!this.myMap.getLoc(new Location(this.myLoc.x + 1, this.myLoc.y)).contains(Map.Type.WALL)) {
-			validMoves.add(new Location(this.myLoc.x + 1, this.myLoc.y));
+		if (!this.myMap.getLoc(new Location(this.myLoc.x - 1, this.myLoc.y + 1)).contains(Map.Type.WALL)) {
+			validMoves.add(new Location(this.myLoc.x - 1, this.myLoc.y + 1));
 		}
 
 		// check (x-1 , y-1)
-		if (!this.myMap.getLoc(new Location(this.myLoc.x + 1, this.myLoc.y)).contains(Map.Type.WALL)) {
-			validMoves.add(new Location(this.myLoc.x + 1, this.myLoc.y));
+		if (!this.myMap.getLoc(new Location(this.myLoc.x - 1, this.myLoc.y - 1)).contains(Map.Type.WALL)) {
+			validMoves.add(new Location(this.myLoc.x - 1, this.myLoc.y - 1));
 		}
 
 		// check (x+1 , y-1)
-		if (!this.myMap.getLoc(new Location(this.myLoc.x + 1, this.myLoc.y)).contains(Map.Type.WALL)) {
-			validMoves.add(new Location(this.myLoc.x + 1, this.myLoc.y));
+		if (!this.myMap.getLoc(new Location(this.myLoc.x + 1, this.myLoc.y - 1)).contains(Map.Type.WALL)) {
+			validMoves.add(new Location(this.myLoc.x + 1, this.myLoc.y - 1));
 		}
 
 		return validMoves;
@@ -83,8 +82,7 @@ public class PacMan {
 	}
 
 	/**
-	 * Determines whether there is a ghost within a 1 radius attack
-	 * range of pacman
+	 * Determines whether there is a ghost within a 1 radius attack range of pacman
 	 * 
 	 * @return true if a ghost is in range of pacman, and false if not
 	 */
@@ -113,14 +111,13 @@ public class PacMan {
 		return false;
 	}
 
-
-	public JComponent consume() { 
+  public JComponent consume() { 
 		
 		 if (myMap.getLoc(myLoc).contains(Map.Type.COOKIE)){
 			return myMap.eatCookie(myName);
-			 
-		 } else {
-			 return null;
-		 }
+
+		} else {
+			return null;
+		}
 	}
 }
