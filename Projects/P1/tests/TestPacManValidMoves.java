@@ -2,6 +2,8 @@ import junit.framework.*;
 import java.awt.Color;
 import java.io.*;
 
+import static org.junit.Assert.*;
+
 public class TestPacManValidMoves extends TestCase {
 
 	public void testPacManValidMoves() throws FileNotFoundException {
@@ -10,7 +12,7 @@ public class TestPacManValidMoves extends TestCase {
 
 		// A pacman at location 0,0 should be able to move somewhere since that is where
 		// the game starts
-		Ghost pacman = frame.addPacMan(new Location(0, 0));
+		PacMan pacman = frame.addPacMan(new Location(1, 1));
 		assertTrue(pacman.get_valid_moves().size() != 0);
 	}
 }
