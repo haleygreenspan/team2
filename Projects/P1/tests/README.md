@@ -5,8 +5,8 @@
  * Bharath Hegde 
  * Xuewei Ji
 
-## 2. Our code laying PacMan Image:
-![PacMan]()
+## 2. Our Code Playing PacMan Image:
+![PacMan](https://github.com/cmsc388T/team2/blob/main/Projects/P1/tests/image.png)
 
 ## 3. How to Run The Code 
 This code could be run from the command line by using the following commands.
