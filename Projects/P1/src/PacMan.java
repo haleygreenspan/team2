@@ -1,6 +1,7 @@
 import java.util.HashSet;
 import java.util.ArrayList;
 import javax.swing.JComponent;
+import java.util.Random;
 
 
 public class PacMan {
@@ -70,7 +71,11 @@ public class PacMan {
 
 	public boolean move() {
 		if(get_valid_moves().size() != 0){
-			myLoc = get_valid_moves().get(0);
+			Random r = new Random();
+			int size = get_valid_moves().size();
+			int index = r.nextInt(size);
+			myLoc = get_valid_moves().get(index);
+			myMap.move(myName, myLoc, Map.Type.PACMAN);
 			return true;
 		} else {
 			return false;
