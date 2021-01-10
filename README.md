@@ -108,7 +108,7 @@ Make sure to run these commands from inside the P1 directory
 
   + Test Description: First, a PacMan and ghost within range of each other are added, and the test ensures that Map.attack() returns true when controlling the ghost, and that Map.isGameOver() returns true as well afterwards. Another test method tries to call Map.attack() with a non-existent ghost name, as well as the name "wall", to make sure none of those attacks work and also that the game is not over afterwards. Another test method places a PacMan and ghost just outside of range of each other, and makes sure that Map.attack() fails when called on the ghost, and that the game is not over afterwards.
 
-  - **eatCookie(String name)**
+- **eatCookie(String name)**
   + Type: `() -> JComponent`
 
   + Function Implementation: This method checks if the 'locations' hashmap contains the name of the cookie passed in. If it is not in the locations map, then this eatCookie method will also return null. If it is in the locations hashmap, then other fields are updated. A string is created for the name of the cookie using the location. The cookie type is removed from the 'field' hashmap. Then the location is removed from the 'location' hashmap. The 'cookies' integer is incremented by 1 to indicate that a cookie has been consumed. Then, the cookie is removed from the 'components' hashmap.
