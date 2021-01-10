@@ -45,9 +45,10 @@ Make sure to run these commands from inside the P1 directory
 - **consume()**
   + Type: `() -> JComponent`
 
-  + Function Implementation:
+  + Function Implementation: This method uses the getLoc method from the Map.java file to obtain the current location pf Pacman and checks if there is
+  a cookie in that location. If there is no cookie, then the method returns null or else it calls on the eatCookie method from the Map.java file to consume the cookie.
 
-  + Test Description:
+  + Test Description: This test creates a new frame along with two Pacmans, p1 and p2 respectively. P1 is placed in location (0,0) where there is a wall. Since there is on cookie at location (0,0), the pacman named p1 will not be able to consume the cookie and thus the consume method should return null. P2 is placed in location (1,1) where there is a cookie and when the consume method is called, it should not return null. 
 
 ### 4.2 Ghost Class
 - **get_valid_moves()**
