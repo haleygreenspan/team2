@@ -38,7 +38,7 @@ Make sure to run these commands from inside the P1 directory
 
   + Function Implementation: This method uses the get_valid_moves method to find a location for a Pacman to move. If the size of the ArrayList that we get from the get_valid_moves method does not equal to 0, moving to the first Location listed in the ArrayList and return true. Otherwise, return false.
 
-  + Test Description: Using the TestPacManMove.java file to create a JUnit test to test whether the move method works well or not. In MainFrame, there is a wall in the Location(0,0). If we add a Pacman here, this Pacman could not move. There is a cookie in the Location(1,1). If we add a Pacman here, this Pacman could move. 
+  + Test Description: Using the TestPacManMove.java file to create a JUnit test to test whether the move method works well or not. In MainFrame, there is a wall in and around the Location(40,40). If we add a Pacman here, this Pacman could not move. There is a cookie in the Location(1,1). If we add a Pacman here, this Pacman could move. 
 
 - **is_ghost_in_range()**
   + Type: `() -> Bool`
@@ -69,7 +69,7 @@ Make sure to run these commands from inside the P1 directory
 
   + Function Implementation: This method uses the get_valid_moves method to find a location for a ghost to move. If the size of the ArrayList that we get from the get_valid_moves method does not equal to 0, moving to the first Location listed in the ArrayList and return true. Otherwise, return false.
 
-  + Test Description: Using the TestGhostMove.java file to create a JUnit test to test whether the move method works well or not. In MainFrame, there is a wall in the Location(0,0). If we add a ghost here, this ghost could not move. There is a cookie in the Location(1,1). If we add a ghost here, this ghost could move. 
+  + Test Description: Using the TestGhostMove.java file to create a JUnit test to test whether the move method works well or not. In MainFrame, there is a wall in and around the Location(40,40). If we add a ghost here, this ghost could not move. There is a cookie in the Location(1,1). If we add a ghost here, this ghost could move. 
 
 - **is_pacman_in_range()**
   + Type: `() -> Bool`
