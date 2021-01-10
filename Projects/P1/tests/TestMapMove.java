@@ -2,14 +2,16 @@ import junit.framework.*;
 import java.awt.Color;
 import java.io.*;
 
-public class TestMapMove {
+import static org.junit.Assert.*;
 
-	public void testMapMove() {
+public class TestMapMove extends TestCase {
+
+	public void testMapMove() throws FileNotFoundException {
 		// Creating A Map
 		NoFrame frame = new NoFrame(); // Creates A New Map With Walls and Tokens w/o a Display
 		// For instance a ghost (or anything) should be able to move to the origin
-		Ghost ghost1 = frame.addGhost(new Location(0, 1), "ghost1", Color.BLACK);
+		Ghost ghost1 = frame.addGhost(new Location(1, 2), "ghost1", Color.BLACK);
 		// The move to the origin should be true
-		assertTrue(frame.getMap().move("ghost1", new Location(0, 0), Map.Type.GHOST));
+		assertTrue(frame.getMap().move("ghost1", new Location(1, 1), Map.Type.GHOST));
 	}
 }
