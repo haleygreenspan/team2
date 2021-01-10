@@ -23,7 +23,7 @@ public class Ghost{
 			int size = get_valid_moves().size();
 			int index = r.nextInt(size);
 			myLoc = get_valid_moves().get(index);
-			myMap.move(myName, myLoc, Map.Type.PACMAN);
+			myMap.move(myName, myLoc, Map.Type.GHOST);
 			return true;
 		} else {
 			return false;
