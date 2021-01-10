@@ -5,11 +5,11 @@ import java.io.*;
 import java.util.HashSet;
 
 
-public class TestMapGetLoc {
+public class TestMapGetLoc extends TestCase{
 	
 	//private HashSet<Map.Type> cookieSet;
-	private HashSet<Map.Type> wallSet;
-	
+	public HashSet<Map.Type> wallSet;
+
 	public void testMapGetLoc() throws FileNotFoundException {
 		//Creating A Map 
 		MainFrame frame = new MainFrame(); //Creates A New Map With Walls and Tokens Initialized
@@ -29,3 +29,4 @@ public class TestMapGetLoc {
 		//assertEquals(cookieSet, loc3);
 	}
 }
+
