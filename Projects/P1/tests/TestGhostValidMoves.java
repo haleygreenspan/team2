@@ -2,6 +2,8 @@ import junit.framework.*;
 import java.awt.Color;
 import java.io.*;
 
+import static org.junit.Assert.*;
+
 public class TestGhostValidMoves extends TestCase {
 
 	public void testGhostValidMoves() throws FileNotFoundException {
@@ -10,7 +12,7 @@ public class TestGhostValidMoves extends TestCase {
 
 		// A ghost at location 0,0 should be able to move somewhere since that is where
 		// the game starts
-		Ghost ghost1 = frame.addGhost(new Location(0, 0), "ghost1", Color.BLACK);
+		Ghost ghost1 = frame.addGhost(new Location(1, 1), "ghost1", Color.BLACK);
 		assertTrue(ghost1.get_valid_moves().size() != 0);
 	}
 }

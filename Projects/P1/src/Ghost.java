@@ -1,5 +1,6 @@
 import java.util.HashSet;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Ghost {
 	String myName;
@@ -67,8 +68,12 @@ public class Ghost {
 	}
 
 	public boolean move() {
-		if (get_valid_moves().size() != 0) {
-			myLoc = get_valid_moves().get(0);
+		if(get_valid_moves().size() != 0){
+			Random r = new Random();
+			int size = get_valid_moves().size();
+			int index = r.nextInt(size);
+			myLoc = get_valid_moves().get(index);
+			myMap.move(myName, myLoc, Map.Type.PACMAN);
 			return true;
 		} else {
 			return false;
@@ -102,7 +107,6 @@ public class Ghost {
 
 		// If none of the coordinates checked had pacman, this ghost is not
 		// in range of pacman
-
 		return false;
 	}
 
