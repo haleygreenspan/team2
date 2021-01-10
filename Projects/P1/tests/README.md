@@ -24,9 +24,9 @@ Make sure to run these commands from inside the P1 directory
 - **get_valid_moves()**
   + Type: `() -> ArrayList`
 
-  + Function Implementation:
+  + Function Implementation: It gets all possible moves that pacman can move. This is implemented by checking horizontally, vertically, and diagonally by one unit. 
 
-  + Test Description:
+  + Test Description: The test shows that at (1,1) the pacman can indeed move somewhere. 
 
 - **move()**
   + Type: `() -> Bool`
@@ -38,10 +38,10 @@ Make sure to run these commands from inside the P1 directory
 - **is_ghost_in_range()**
   + Type: `() -> Bool`
 
-  + Function Implementation:
+  + Function Implementation: 
 
-  + Test Description:
-
+  + Test Description: 
+  
 - **consume()**
   + Type: `() -> JComponent`
 
@@ -54,9 +54,10 @@ Make sure to run these commands from inside the P1 directory
 - **get_valid_moves()**
   + Type: `() -> ArrayList<Location>`
 
-  + Function Implementation:
+  + Function Implementation: It gets all possible moves that a ghost can move. This is implemented by checking horizontally, vertically, and diagonally by one unit. 
 
-  + Test Description:
+  + Test Description: The test shows that at (1,1) the ghost can indeed move somewhere. 
+
 
 - **move()**
   + Type: `() -> Bool`
@@ -84,9 +85,9 @@ Make sure to run these commands from inside the P1 directory
 - **move(String name, Location loc, Type type)**
   + Type: `(String name, Location loc, Type type) -> Bool`
 
-  + Function Implementation:
+  + Function Implementation: It first gets the old location and updated the new location and component to the new location. Using the old location from before it removes the type present in the old location and moves it to the new location. 
 
-  + Test Description:
+  + Test Description: The test asserts that a ghost can indeed move from (1,2) to (1,1).
 
 - **getLoc(Location loc)**
   + Type: `(Location loc) -> HashSet<Type>`
