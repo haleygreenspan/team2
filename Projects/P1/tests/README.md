@@ -75,9 +75,10 @@ Make sure to run these commands from inside the P1 directory
 - **attack()**
   + Type: `() -> Bool`
 
-  + Function Implementation:
+  + Function Implementation: This method uses the is_pacman_in_range method to check is a pacman is nearby. If pacman is nearby, then the function calls
+  the attack method from the Map.java file. If pacman is not nearby, then it returns false.
 
-  + Test Description:
+  + Test Description: A new frame is created along with a ghost and pacman. The ghost is initialized to be at location(2,2) and the pacman at location(1,2). Since the pacman is range of the ghost, the ghost should be able to attack the pacman and return true.
 
 ### 4.3 Map Class
 - **move(String name, Location loc, Type type)**
