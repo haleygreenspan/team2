@@ -3,9 +3,6 @@ import java.util.ArrayList;
 import javax.swing.JComponent;
 
 
-import Map.Type;
-
-
 public class PacMan {
 
 	String myName;
@@ -115,7 +112,7 @@ public class PacMan {
 
 	public JComponent consume() { 
 		
-		 if (myMap.getLoc(myLoc).contains(Type.COOKIE)){
+		 if (myMap.getLoc(myLoc).contains(Map.Type.COOKIE)){
 			return myMap.eatCookie(myName);
 			 
 		 } else {
