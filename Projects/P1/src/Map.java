@@ -66,7 +66,7 @@ public class Map {
 			field.get(old).remove(type);
 			field.get(loc).add(type);
 			// if all goes fine return true
-			return false; // <-- error there
+			return false; 
 		} catch (Exception e) {
 			return false;
 		}
