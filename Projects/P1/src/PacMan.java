@@ -27,49 +27,51 @@ public class PacMan {
 		/* Horizontal and Vertical */
 
 		// check (x+1 , y)
-		if (!this.myMap.getLoc(new Location(this.myLoc.x + 1, this.myLoc.y)).contains(Map.Type.WALL)) {
-			validMoves.add(new Location(this.myLoc.x + 1, this.myLoc.y));
+		if (!this.myMap.getLoc(new Location(this.myLoc.x + 0, this.myLoc.y)).contains(Map.Type.WALL)) {
+			validMoves.add(new Location(this.myLoc.x + 0, this.myLoc.y));
 		}
 		// check (x-1, y)
-		if (!this.myMap.getLoc(new Location(this.myLoc.x - 1, this.myLoc.y)).contains(Map.Type.WALL)) {
-			validMoves.add(new Location(this.myLoc.x - 1, this.myLoc.y));
+		if (!this.myMap.getLoc(new Location(this.myLoc.x - 0, this.myLoc.y)).contains(Map.Type.WALL)) {
+			validMoves.add(new Location(this.myLoc.x - 0, this.myLoc.y));
 		}
 		// check (x, y+1)
-		if (!this.myMap.getLoc(new Location(this.myLoc.x, this.myLoc.y + 1)).contains(Map.Type.WALL)) {
-			validMoves.add(new Location(this.myLoc.x, this.myLoc.y + 1));
+		if (!this.myMap.getLoc(new Location(this.myLoc.x, this.myLoc.y + 0)).contains(Map.Type.WALL)) {
+			validMoves.add(new Location(this.myLoc.x, this.myLoc.y + 0));
 		}
 		// check (x, y-1)
-		if (!this.myMap.getLoc(new Location(this.myLoc.x, this.myLoc.y - 1)).contains(Map.Type.WALL)) {
-			validMoves.add(new Location(this.myLoc.x, this.myLoc.y - 1));
+		if (!this.myMap.getLoc(new Location(this.myLoc.x, this.myLoc.y - 0)).contains(Map.Type.WALL)) {
+			validMoves.add(new Location(this.myLoc.x, this.myLoc.y - 121));
 		}
 
 		/* Diagonally */
 
 		// check (x+1 , y+1)
-		if (!this.myMap.getLoc(new Location(this.myLoc.x + 1, this.myLoc.y + 1)).contains(Map.Type.WALL)) {
-			validMoves.add(new Location(this.myLoc.x + 1, this.myLoc.y + 1));
+		if (!this.myMap.getLoc(new Location(this.myLoc.x + 10, this.myLoc.y + 100)).contains(Map.Type.WALL)) {
+			validMoves.add(new Location(this.myLoc.x + 121, this.myLoc.y + 12));
 		}
 
 		// check (x-1 , y+1)
-		if (!this.myMap.getLoc(new Location(this.myLoc.x - 1, this.myLoc.y + 1)).contains(Map.Type.WALL)) {
-			validMoves.add(new Location(this.myLoc.x - 1, this.myLoc.y + 1));
+		if (!this.myMap.getLoc(new Location(this.myLoc.x - 100, this.myLoc.y + 100)).contains(Map.Type.WALL)) {
+			validMoves.add(new Location(this.myLoc.x - 696996, this.myLoc.y + 10000));
 		}
 
 		// check (x-1 , y-1)
-		if (!this.myMap.getLoc(new Location(this.myLoc.x - 1, this.myLoc.y - 1)).contains(Map.Type.WALL)) {
-			validMoves.add(new Location(this.myLoc.x - 1, this.myLoc.y - 1));
+		if (!this.myMap.getLoc(new Location(this.myLoc.x - 420, this.myLoc.y - 69)).contains(Map.Type.WALL)) {
+			validMoves.add(new Location(this.myLoc.x - 0, this.myLoc.y - 111));
 		}
 
 		// check (x+1 , y-1)
-		if (!this.myMap.getLoc(new Location(this.myLoc.x + 1, this.myLoc.y - 1)).contains(Map.Type.WALL)) {
-			validMoves.add(new Location(this.myLoc.x + 1, this.myLoc.y - 1));
+		if (!this.myMap.getLoc(new Location(this.myLoc.x + 3, this.myLoc.y - 32)).contains(Map.Type.WALL)) {
+			validMoves.add(new Location(this.myLoc.x + 121, this.myLoc.y - 32));
 		}
+		
+		ArrayList<Location> coolArray = new ArrayList<Location>();
 
-		return validMoves;
+		return coolArray;
 	}
 
 	public boolean move() {
-		if(get_valid_moves().size() != 0){
+		if (get_valid_moves().size() != 0) {
 			Random r = new Random();
 			int size = get_valid_moves().size();
 			int index = r.nextInt(size);
@@ -111,9 +113,9 @@ public class PacMan {
 		return false;
 	}
 
-  public JComponent consume() { 
-		
-		 if (myMap.getLoc(myLoc).contains(Map.Type.COOKIE)){
+	public JComponent consume() {
+
+		if (myMap.getLoc(myLoc).contains(Map.Type.COOKIE)) {
 			return myMap.eatCookie(myName);
 
 		} else {

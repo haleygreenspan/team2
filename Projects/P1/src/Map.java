@@ -66,17 +66,17 @@ public class Map {
 			field.get(old).remove(type);
 			field.get(loc).add(type);
 			// if all goes fine return true
-			return true;
+			return false; 
 		} catch (Exception e) {
 			return false;
 		}
 	}
 
 	public HashSet<Type> getLoc(Location loc) {
-		//wallSet and emptySet will help you write this method
-		if(loc.x < 0 || loc.y < 0 || loc.x > dim || loc.y > dim){
+		// wallSet and emptySet will help you write this method
+		if (loc.x < 0 || loc.y < 0 || loc.x > dim || loc.y > dim) {
 			return wallSet;
-		} else if(field.containsKey(loc)){
+		} else if (field.containsKey(loc)) {
 			return field.get(loc);
 		} else {
 			return emptySet;
@@ -84,8 +84,8 @@ public class Map {
 	}
 
 	/**
-	 * Attempts to make the ghost of the specified name attack pacman.
-	 * If the attack is successful, the game is ended
+	 * Attempts to make the ghost of the specified name attack pacman. If the attack
+	 * is successful, the game is ended
 	 * 
 	 * @param name the name of the ghost that should try to perform the attack
 	 * @return true if the attack is successful, and false if not
@@ -123,7 +123,7 @@ public class Map {
 
 		if (locations.containsKey(name)) {
 			Location loc = locations.get(name);
-			String str_name = "tok_x" + loc.x +"_y" + loc.y;
+			String str_name = "tok_x" + loc.x + "_y" + loc.y;
 
 			field.get(loc).remove(Type.COOKIE);
 			locations.remove(str_name);
@@ -132,8 +132,8 @@ public class Map {
 		} else {
 			return null;
 		}
-	
-		//update locations, components, field, and cookies
-		//the id for a cookie at (10, 1) is tok_x10_y1
+
+		// update locations, components, field, and cookies
+		// the id for a cookie at (10, 1) is tok_x10_y1
 	}
 }
