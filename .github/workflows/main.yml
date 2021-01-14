@@ -2,7 +2,7 @@
 
 name: PacMan Compile and Test
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events for any branch
   push:
@@ -30,9 +30,9 @@ jobs:
         run: |
           javac -cp "src/" src/*.java
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-      
+
   # Run each test (to be completed)
-  
+
   # *** Antonio Tests: TestPacManValidMoves, TestGhostValidMoves, and TestMapMove ***
   AntonioTestsAreTheCoolest:
     # The type of runner that the job will run on
@@ -50,7 +50,6 @@ jobs:
         run: |
           javac -cp "src/" src/*.java
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-	        java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
           java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves
           java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapMove
-
