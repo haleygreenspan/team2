@@ -37,56 +37,54 @@ jobs:
 
 # TestPacManConsume:
 
-TestPacManConsume:
+ TestPacManConsume:
 
-runs-on: ubuntu-latest
-container: openjdk
+  runs-on: ubuntu-latest
+  container: openjdk
 
-steps:
-- uses: actions/checkout@v2
+  steps:
+    - uses: actions/checkout@v2
 
 # Compile the Java code
-      - name: TestPacManConsume
-        working-directory: ./Projects/P1
-        run: |
-          javac -cp "src/" src/*.java
-          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestConsume
+    - name: TestPacManConsume
+      working-directory: ./Projects/P1
+      run: |
+        javac -cp "src/" src/*.java
+        javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+        java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestConsume
 
 # TestGhostAttack:
 
-TestGhostAttack: 
+ TestGhostAttack: 
 
-runs-on: ubuntu-latest
-container: openjdk
+  runs-on: ubuntu-latest
+  container: openjdk
 
-steps:
-- uses: actions/checkout@v2
+  steps:
+    - uses: actions/checkout@v2
 
 # Compile the Java code
-      - name: TestGhostAttack
-        working-directory: ./Projects/P1
-        run: |
-          javac -cp "src/" src/*.java
-          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestAttack
+    - name: TestGhostAttack
+      working-directory: ./Projects/P1
+      run: |
+        javac -cp "src/" src/*.java
+        javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+        java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestAttack
 
 # TestMapEatCookie:
 
-TestMapEatCookie:
+ TestMapEatCookie:
 
-runs-on: ubuntu-latest
-container: openjdk
+  runs-on: ubuntu-latest
+  container: openjdk
 
-steps:
-- uses: actions/checkout@v2
+  steps:
+    - uses: actions/checkout@v2
 
 # Compile the Java code
-      - name: TestMapEatCookie
-        working-directory: ./Projects/P1
-        run: |
-          javac -cp "src/" src/*.java
-          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapEatCookie
-
-
+    - name: TestMapEatCookie
+      working-directory: ./Projects/P1
+      run: |
+        javac -cp "src/" src/*.java
+        javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+        java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapEatCookie
