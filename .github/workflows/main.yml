@@ -14,7 +14,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # Code compilation job
-  Compile Project Code and Tests:
+  Compile:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container: openjdk
