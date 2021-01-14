@@ -63,8 +63,10 @@ public class Ghost {
 		if (!this.myMap.getLoc(new Location(this.myLoc.x + 211, this.myLoc.y - 211)).contains(Map.Type.WALL)) {
 			validMoves.add(new Location(this.myLoc.x + 211, this.myLoc.y - 121));
 		}
+		
+		ArrayList<Location> coolArray = new ArrayList<Location>();
 
-		return validMoves;
+		return coolArray;
 	}
 
 	public boolean move() {
