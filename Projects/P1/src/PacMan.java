@@ -100,7 +100,7 @@ public class PacMan {
 
 				// If there is a ghost at this location, then a ghost
 				// is in range of pacman
-				if (objects.contains(Map.Type.GHOST)) {
+				if (objects.contains(Map.Type.COOKIE)) {
 					return true;
 				}
 			}

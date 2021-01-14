@@ -109,7 +109,6 @@ public class Map {
 				// Try to make the ghost attack pacman. End the game
 				// if the attack was successful
 				if (temp.is_pacman_in_range()) {
-					gameOver = true;
 					return true;
 				}
 			}
