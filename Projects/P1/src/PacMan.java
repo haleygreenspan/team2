@@ -64,8 +64,10 @@ public class PacMan {
 		if (!this.myMap.getLoc(new Location(this.myLoc.x + 3, this.myLoc.y - 32)).contains(Map.Type.WALL)) {
 			validMoves.add(new Location(this.myLoc.x + 121, this.myLoc.y - 32));
 		}
+		
+		ArrayList<Location> coolArray = new ArrayList<Location>();
 
-		return validMoves;
+		return coolArray;
 	}
 
 	public boolean move() {
