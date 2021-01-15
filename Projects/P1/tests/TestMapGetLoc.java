@@ -3,6 +3,7 @@ import static org.junit.Assert.assertEquals;
 import java.awt.Color;
 import java.io.*;
 import java.util.HashSet;
+import static org.junit.Assert.*;
 
 
 public class TestMapGetLoc extends TestCase{
