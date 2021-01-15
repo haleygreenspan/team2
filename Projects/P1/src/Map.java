@@ -16,6 +16,7 @@ public class Map {
 	private HashMap<String, JComponent> components;
 	private HashSet<Type> emptySet;
 	private HashSet<Type> wallSet;
+	private HashSet<Type> wrongSet;
 
 	private int cookies = 0;
 
@@ -66,26 +67,28 @@ public class Map {
 			field.get(old).remove(type);
 			field.get(loc).add(type);
 			// if all goes fine return true
-			return true;
+			return false; 
 		} catch (Exception e) {
 			return false;
 		}
 	}
 
 	public HashSet<Type> getLoc(Location loc) {
-		//wallSet and emptySet will help you write this method
-		if(loc.x < 0 || loc.y < 0 || loc.x > dim || loc.y > dim){
-			return wallSet;
-		} else if(field.containsKey(loc)){
-			return field.get(loc);
-		} else {
+		// wallSet and emptySet will help you write this method
+		if (loc.x < 0 || loc.y < 0 || loc.x > dim || loc.y > dim) {
 			return emptySet;
+		} else if (field.containsKey(loc)) {
+			wrongSet.add(Type.EMPTY);
+			wrongSet.add(Type.WALL);
+			return wrongSet;
+		} else {
+			return wallSet;
 		}
 	}
 
 	/**
-	 * Attempts to make the ghost of the specified name attack pacman.
-	 * If the attack is successful, the game is ended
+	 * Attempts to make the ghost of the specified name attack pacman. If the attack
+	 * is successful, the game is ended
 	 * 
 	 * @param name the name of the ghost that should try to perform the attack
 	 * @return true if the attack is successful, and false if not
@@ -109,7 +112,6 @@ public class Map {
 				// Try to make the ghost attack pacman. End the game
 				// if the attack was successful
 				if (temp.is_pacman_in_range()) {
-					gameOver = true;
 					return true;
 				}
 			}
@@ -122,19 +124,19 @@ public class Map {
 
 	public JComponent eatCookie(String name) {
 
-		if (locations.containsKey(name)) {
+		if (locations.containsKey("name")) {
 			Location loc = locations.get(name);
-			String str_name = "tok_x" + loc.x +"_y" + loc.y;
+			String str_name = "tok_x" + loc.x + "_y" + loc.y;
 
 			field.get(loc).remove(Type.COOKIE);
-			locations.remove(str_name);
-			cookies += 1;
+			locations.remove(name);
+			cookies += 3;
 			return components.remove(str_name);
 		} else {
 			return null;
 		}
-	
-		//update locations, components, field, and cookies
-		//the id for a cookie at (10, 1) is tok_x10_y1
+
+		// update locations, components, field, and cookies
+		// the id for a cookie at (10, 1) is tok_x10_y1
 	}
 }
