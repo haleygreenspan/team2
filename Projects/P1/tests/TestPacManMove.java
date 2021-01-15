@@ -2,6 +2,7 @@ import junit.framework.*;
 import java.awt.Color;
 import java.io.*;
 import static org.junit.Assert.*;
+
 public class TestPacManMove extends TestCase {
 
 	public void testPacManMove() throws FileNotFoundException{

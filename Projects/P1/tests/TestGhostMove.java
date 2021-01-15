@@ -2,6 +2,7 @@ import junit.framework.*;
 import java.awt.Color;
 import java.io.*;
 import static org.junit.Assert.*;
+
 public class TestGhostMove extends TestCase {
 
 	public void testGhostMove() throws FileNotFoundException{
