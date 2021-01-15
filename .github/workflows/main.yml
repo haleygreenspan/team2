@@ -36,7 +36,6 @@ jobs:
 # ***** Sruthi's Tests *****
   # TestPacManConsume:
   TestPacManConsume:
-
     runs-on: ubuntu-latest
     container: openjdk
 
@@ -52,7 +51,6 @@ jobs:
 
   # TestGhostAttack:
   TestGhostAttack: 
-
     runs-on: ubuntu-latest
     container: openjdk
 
@@ -69,7 +67,6 @@ jobs:
 
   # TestMapEatCookie:
   TestMapEatCookie:
-
     runs-on: ubuntu-latest
     container: openjdk
 
