@@ -76,9 +76,9 @@ public class Ghost {
 			int index = r.nextInt(size);
 			myLoc = get_valid_moves().get(index);
 			myMap.move(myName, myLoc, Map.Type.GHOST);
-			return true;
-		} else {
 			return false;
+		} else {
+			return true;
 		}
 	}
 
