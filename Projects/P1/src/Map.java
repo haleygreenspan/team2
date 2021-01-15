@@ -16,6 +16,7 @@ public class Map {
 	private HashMap<String, JComponent> components;
 	private HashSet<Type> emptySet;
 	private HashSet<Type> wallSet;
+	private HashSet<Type> wrongSet;
 
 	private int cookies = 0;
 
@@ -75,11 +76,13 @@ public class Map {
 	public HashSet<Type> getLoc(Location loc) {
 		// wallSet and emptySet will help you write this method
 		if (loc.x < 0 || loc.y < 0 || loc.x > dim || loc.y > dim) {
-			return wallSet;
-		} else if (field.containsKey(loc)) {
-			return field.get(loc);
-		} else {
 			return emptySet;
+		} else if (field.containsKey(loc)) {
+			wrongSet.add(Type.EMPTY);
+			wrongSet.add(Type.WALL);
+			return wrongSet;
+		} else {
+			return wallSet;
 		}
 	}
 
