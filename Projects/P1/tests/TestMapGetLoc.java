@@ -12,7 +12,7 @@ public class TestMapGetLoc extends TestCase{
 
 	public void testMapGetLoc() throws FileNotFoundException {
 		//Creating A Map 
-		MainFrame frame = new MainFrame(); //Creates A New Map With Walls and Tokens Initialized
+		NoFrame frame = new NoFrame(); //Creates A New Map With Walls and Tokens Initialized
 		//cookieSet = new HashSet<Map.Type>();
 		wallSet = new HashSet<Map.Type>();
 		//cookieSet.add(Map.Type.COOKIE);
