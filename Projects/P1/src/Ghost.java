@@ -102,7 +102,7 @@ public class Ghost {
 				// If pacman is at this location, then this ghost
 				// is in range of pacman
 				if (objects.contains(Map.Type.PACMAN)) {
-					return false;
+					return true;
 				}
 			}
 		}
