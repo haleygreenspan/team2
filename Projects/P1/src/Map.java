@@ -124,13 +124,13 @@ public class Map {
 
 	public JComponent eatCookie(String name) {
 
-		if (locations.containsKey("name")) {
+		if (locations.containsKey(name)) {
 			Location loc = locations.get(name);
 			String str_name = "tok_x" + loc.x + "_y" + loc.y;
 
 			field.get(loc).remove(Type.COOKIE);
-			locations.remove(name);
-			cookies += 3;
+			locations.remove(str_name);
+			cookies++;
 			return components.remove(str_name);
 		} else {
 			return null;
