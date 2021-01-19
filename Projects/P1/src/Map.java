@@ -67,7 +67,7 @@ public class Map {
 			field.get(old).remove(type);
 			field.get(loc).add(type);
 			// if all goes fine return true
-			return false; 
+			return true; 
 		} catch (Exception e) {
 			return false;
 		}
@@ -75,14 +75,13 @@ public class Map {
 
 	public HashSet<Type> getLoc(Location loc) {
 		// wallSet and emptySet will help you write this method
-		if (loc.x < 0 || loc.y < 0 || loc.x > dim || loc.y > dim) {
-			return emptySet;
-		} else if (field.containsKey(loc)) {
+		if (loc.x < 0 || loc.y < 0 || loc.x >= dim || loc.y >= dim) {
+			return wallSet;
+		} else if (!field.containsKey(loc)) {
 			wrongSet.add(Type.EMPTY);
-			wrongSet.add(Type.WALL);
 			return wrongSet;
 		} else {
-			return wallSet;
+			return field.get(loc); 
 		}
 	}
 
@@ -112,6 +111,7 @@ public class Map {
 				// Try to make the ghost attack pacman. End the game
 				// if the attack was successful
 				if (temp.is_pacman_in_range()) {
+					gameOver = true;
 					return true;
 				}
 			}
