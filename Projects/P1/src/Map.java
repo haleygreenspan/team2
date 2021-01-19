@@ -78,8 +78,7 @@ public class Map {
 		if (loc.x < 0 || loc.y < 0 || loc.x >= dim || loc.y >= dim) {
 			return wallSet;
 		} else if (!field.containsKey(loc)) {
-			wrongSet.add(Type.EMPTY);
-			return wrongSet;
+			return emptySet;
 		} else {
 			return field.get(loc); 
 		}
